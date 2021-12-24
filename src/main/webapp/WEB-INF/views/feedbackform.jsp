@@ -16,19 +16,19 @@
 			<table>
 				<tr>
 					<td>Feedback Id:</td>
-					<td><form:input path="fid" /></td>
+					<td><form:input path="fid" readOnly="true"/></td>
 				</tr>
 				<tr>
 					<td>Student Name:</td>
 					<td><form:input path="studentName" /></td>
 				</tr>
 				<tr>
-					<td>Instructor:</td>
-					<td><form:input path="instructor" /></td>
+					<td>Subject:</td>
+					<td><form:select path="subject" items="${subjects}"/></td>
 				</tr>
 				<tr>
-					<td>Subject:</td>
-					<td><form:input path="subject" /></td>
+					<td>Instructor:</td>
+					<td><form:select path="instructor" items="${instructors}"/></td>
 				</tr>
 				<tr>
 					<td>FbValue:</td>

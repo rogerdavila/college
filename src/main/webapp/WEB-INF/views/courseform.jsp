@@ -16,7 +16,7 @@
 			<table>
 				<tr>
 					<td>Course No:</td>
-					<td><form:input path="courseno"/></td>
+					<td><form:input path="courseno" readOnly="true"/></td>
 				</tr>
 				<tr>
 					<td>duration:</td>

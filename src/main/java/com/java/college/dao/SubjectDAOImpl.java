@@ -38,4 +38,25 @@ public class SubjectDAOImpl implements SubjectDAO {
 		return SubjectMapper.entityListToBeanList(subjects);
 	}
 	
+	@Override
+	public int getNextId() {
+		Session s = sessionFactory.openSession();
+		Query query = s.createQuery("select max(s.subjectId) from Subject s");
+		
+		List<Integer> id = query.list();
+		
+		if (id != null && id.get(0) != null) {
+			return id.get(0) + 1;
+		} else {
+			return 1;
+		}
+	}
+
+	@Override
+	public List<String> listSubjects() {
+		Session s = sessionFactory.openSession();
+		Query query = s.createQuery("select distinct(s.subject) from Subject s");
+		
+		return query.list();
+	}
 }

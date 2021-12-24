@@ -9,5 +9,7 @@ public interface CourseDAO {
 	String add(CourseBean bean);
 	
 	List<CourseBean> list();
+
+	String getNextNo();
 	
 }

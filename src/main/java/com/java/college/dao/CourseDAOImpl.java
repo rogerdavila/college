@@ -38,4 +38,18 @@ public class CourseDAOImpl implements CourseDAO {
 		return CourseMapper.entityListToBeanList(courses);
 	}
 
+	@Override
+	public String getNextNo() {
+		Session s = sessionFactory.openSession();
+		Query query = s.createQuery("select max(c.courseno) from Course c");
+		
+		List<String> courseno = query.list();
+		
+		if (courseno != null && courseno.get(0) != null) {
+			return Integer.toString(Integer.valueOf(courseno.get(0)) + 1);
+		} else {
+			return "1";
+		}
+	}
+
 }

@@ -10,4 +10,6 @@ public interface FeedbackDAO {
 	
 	List<FeedbackBean> list();
 	
+	String getNextId();
+	
 }

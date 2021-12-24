@@ -16,7 +16,7 @@
 			<table>
 				<tr>
 					<td>Subject Id:</td>
-					<td><form:input path="subjectId" type="number" step="1"/></td>
+					<td><form:input path="subjectId" type="number" step="1" readOnly="true"/></td>
 				</tr>
 				<tr>
 					<td>Year:</td>

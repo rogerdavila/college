@@ -10,4 +10,8 @@ public interface SubjectDAO {
 	
 	List<SubjectBean> list();
 	
+	int getNextId();
+
+	List<String> listSubjects();
+	
 }

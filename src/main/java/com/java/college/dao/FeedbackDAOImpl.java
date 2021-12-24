@@ -37,5 +37,19 @@ public class FeedbackDAOImpl implements FeedbackDAO {
 		
 		return FeedbackMapper.entityListToBeanList(feedbacks);
 	}
+	
+	@Override
+	public String getNextId() {
+		Session s = sessionFactory.openSession();
+		Query query = s.createQuery("select max(f.fid) from Feedback f");
+		
+		List<String> id = query.list();
+		
+		if (id != null && id.get(0) != null) {
+			return Integer.toString(Integer.valueOf(id.get(0)) + 1);
+		} else {
+			return "1";
+		}
+	}
 
 }

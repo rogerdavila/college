@@ -32,7 +32,7 @@
 					<td>${course.duration}</td>
 					<fmt:formatDate value="${course.startDate}" var="startDate" pattern="MM/dd/yyyy"/>
 					<td>${startDate}</td>
-					<fmt:formatDate value="${course.startDate}" var="endDate" pattern="MM/dd/yyyy"/>
+					<fmt:formatDate value="${course.endDate}" var="endDate" pattern="MM/dd/yyyy"/>
 					<td>${endDate}</td>
 					<td>${course.hod}</td>
 				</tr>

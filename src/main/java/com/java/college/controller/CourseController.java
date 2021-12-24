@@ -45,6 +45,7 @@ public class CourseController {
 	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public ModelAndView addCourse(ModelAndView model) {
 		CourseBean course = new CourseBean();
+		course.setCourseno(courseDAO.getNextNo());
 		model.addObject("course", course);
 		model.setViewName("courseform");
 

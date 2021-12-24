@@ -33,6 +33,7 @@ public class SubjectController {
 	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public ModelAndView addSubject(ModelAndView model) {
 		SubjectBean subject = new SubjectBean();
+		subject.setSubjectId(subjectDAO.getNextId());
 		model.addObject("subject", subject);
 		model.setViewName("subjectform");
 

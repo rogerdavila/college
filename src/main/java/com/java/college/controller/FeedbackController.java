@@ -11,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.java.college.bean.FeedbackBean;
 import com.java.college.dao.FeedbackDAO;
+import com.java.college.dao.InstructorDAO;
+import com.java.college.dao.SubjectDAO;
 
 @Controller
 @RequestMapping(value = "feedback")
@@ -18,6 +20,12 @@ public class FeedbackController {
 
 	@Autowired
 	private FeedbackDAO feedbackDAO;
+	
+	@Autowired
+	private InstructorDAO instructorDAO;
+	
+	@Autowired
+	private SubjectDAO subjectDAO;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView showFeedbacks(ModelAndView model) {
@@ -33,6 +41,9 @@ public class FeedbackController {
 	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public ModelAndView addFeedback(ModelAndView model) {
 		FeedbackBean feedback = new FeedbackBean();
+		feedback.setFid(feedbackDAO.getNextId());
+		model.addObject("instructors", instructorDAO.list());
+		model.addObject("subjects", subjectDAO.listSubjects());
 		model.addObject("feedback", feedback);
 		model.setViewName("feedbackform");
 

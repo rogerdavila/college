@@ -10,8 +10,9 @@
 <body>
 	<div align="center">
 		<h2>
-			<a href="instructor">Instructors</a>&nbsp;&nbsp;&nbsp;<a
-				href="course">Courses</a>&nbsp;&nbsp;&nbsp;<a href="subject">Subjects</a>
+			<a href="course">Courses</a>&nbsp;&nbsp;&nbsp;<a
+				href="instructor">Instructors</a>&nbsp;&nbsp;&nbsp;<a
+				href="subject">Subjects</a>
 		</h2>
 		
 		<h1>Feedbacks</h1>
